@@ -1,0 +1,321 @@
+* Reset some default styles */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+}
+
+/* Global styles */
+body {
+    background-color: #f4f4f4; /* Background color for the website */
+    font-family: 'Arial', sans-serif; /* Default fonts */
+}
+
+.container {
+    width: 100%; /*Container width of the page */
+    margin: 0 auto; /* Center the page */
+}
+
+/* Banner styles */
+.banner {
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Navigation styles section */
+/* Header styles */
+header {
+    background-color: #333;
+    margin: 0;
+    padding: 10px;
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(12px,1vw,16px);
+    text-transform: uppercase;
+}
+
+/* Navigation styles */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 2px;
+}
+
+.logo img {
+    width: 140px;
+    height: auto;
+    margin-right: 10px;
+    border: 2px solid #273746;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s ease;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: relative;
+    transition: color 0.3s ease, transform 0.5s ease; /* Adding a transition for color change */
+}
+
+nav a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform-origin: bottom right;
+    transform: scaleX(0); /* Initial scale to hide the underline */
+    transition: transform 0.3s ease; /* Adding a transition for the underline effect */
+}
+
+nav a:hover {
+    color: #ffcc00; /* Text colour change while hovering  */
+    transform: scale(1.3);
+}
+
+nav a:hover:after {
+    transform-origin: bottom left;
+    transform: scaleX(1); /* Scale to reveal the underline on hover */
+}
+
+/* main section css */
+aside h1, article h1{
+    text-align: center;
+    color: #6d6e70;
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.2125;
+    font-size: clamp(24px, 3vw, 100px);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+    	
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+                 0px -5px 35px rgba(255,255,255,0.3);
+}
+
+aside p, article p{
+    text-align: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    color: #666;
+    line-height: 1.5;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+figure {
+    position: relative;
+    max-width: 275px;
+    margin: 2% auto;
+    border: 8px solid #333;
+    overflow: hidden; /* Ensure that the overflow is hidden for better image containment */
+    transition: transform 0.3s ease;
+}
+
+figure:hover {
+    transform: scale(1.1); /* Scale the figure slightly on hover */
+}
+
+figure img {
+    width: 100%; /* Make the image fill the figure container */
+    height: auto;
+    display: block;
+}
+
+figcaption {
+    position: absolute;
+    bottom: 0;
+    background: #333;
+    color: #fff;
+    width: 100%;
+    padding: 5% 0;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+/* Style rule for the grid class selector */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(240px, 1fr)); 
+    gap: 5%;
+    padding: 20px;
+}
+
+/* Style rule for the figcaption element */
+figcaption {
+    font-size: 1em;
+}
+
+/* Style rule for the aside element within the grid */
+aside {
+    grid-column: 1 / span 4;
+}
+
+
+
+  /* Footer styles section*/
+footer {
+    font-size: 0.8em; /* Reduce font size for the footer */
+    text-align: center; /* Center text */
+    font-family: 'Barlow Condensed', sans-serif;
+    background-color: #333;
+    color: white;
+}
+
+footer a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* Tablet styles */
+@media screen and (min-width: 630px), print {
+
+    /*Responsive part only for Navivation header sections for index.html and Speical.html page*/
+    .logo img {
+        display: none;
+    }
+
+    nav {
+        flex-direction: row; /* Align items horizontally on tablet */
+        align-items: center;
+        justify-content: space-around;
+        padding: 10px 20px;
+        display: flex;
+    }
+
+    nav a {
+        white-space: nowrap; /* Prevent line breaks within links */
+        flex: 1; /* Distribute available space evenly among links */
+        text-align: center;
+        margin: 0 10px;
+        padding: 8px 0; 
+    }
+
+    nav a:after {
+        height: 2px; 
+    }
+
+   
+}
+
+
+/* Mobile styles */
+@media only screen and (max-width: 480px) {
+
+/* Responsive for Navigation Header part only*/
+    .logo img {
+        display: none;
+    }
+
+    /* Navigation styles */
+    nav {
+    display: flex;
+    flex-direction: column; /* Stack items vertically on mobile */
+    align-items: center;
+    text-align: center;
+    padding: 2px;
+}
+nav a {
+    text-decoration: none;
+    color: #fff;
+    margin: 10px 0; /* Adjust margin for better spacing on mobile */
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: relative;
+    transition: color 0.3s ease, transform 0.5s ease; /* Adding a transition for color change */
+}
+
+/*Responsive for Team main content */
+aside h1, article h1 {
+    text-align: center;
+    color: #6d6e70;
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.2125;
+    font-size: clamp(24px, 8vw, 100px); /* Adjusted font size for mobile */
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+}
+
+aside p, article p {
+    text-align: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 14px; /* Adjusted font size for mobile */
+    color: #666;
+    line-height: 1.5;
+    padding-left: 5%; /* Adjusted padding for mobile */
+    padding-right: 5%; /* Adjusted padding for mobile */
+}
+
+figure {
+    position: relative;
+    max-width: 100%; /* Make the figure responsive */
+    margin: 2% auto; /* Adjusted margin for spacing between images */
+    border: 8px solid #333;
+    overflow: hidden; /* Ensure that the overflow is hidden for better image containment */
+    transition: transform 0.3s ease;
+}
+
+figure:hover {
+    transform: scale(1.1); /* Scale the figure slightly on hover */
+}
+
+figure img {
+    width: 100%; /* Make the image fill the figure container */
+    height: auto;
+    display: block;
+}
+
+figcaption {
+    position: absolute;
+    bottom: 0;
+    background: #333;
+    color: #fff;
+    width: 100%;
+    padding: 5% 0;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1em; /* Adjusted font size for mobile */
+    font-weight: bold;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2x2 grid layout for mobile */
+    gap: 5%;
+    padding: 10px; /* Adjusted padding for mobile */
+}
+
+figcaption {
+    font-size: 0.8em;
+}
+
+aside {
+    grid-column: 1 / span 2;
+}
+
+}
